@@ -1,0 +1,1 @@
+export { CookingLandingPage } from "./cooking-landing-page";
