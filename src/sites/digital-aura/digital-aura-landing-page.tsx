@@ -123,11 +123,22 @@ function CountdownTimer() {
   }, [secondsLeft]);
 
   return (
-    <ul className="flex items-center justify-center gap-3 text-sm font-black tracking-[0.18em] text-white/90 sm:gap-5 sm:text-base">
-      <li>{formatted.hours} : Hr</li>
-      <li>{formatted.minutes} : Min</li>
-      <li>{formatted.seconds}Sec</li>
-    </ul>
+    <div className="flex items-center justify-center gap-8 text-center">
+      <div>
+        <div className="text-3xl font-bold text-[#ceff1f]">{formatted.hours}</div>
+        <div className="text-sm text-[#a6a6a6] mt-1">Hours</div>
+      </div>
+      <div className="text-2xl font-bold text-[#a6a6a6]">:</div>
+      <div>
+        <div className="text-3xl font-bold text-[#ceff1f]">{formatted.minutes}</div>
+        <div className="text-sm text-[#a6a6a6] mt-1">Minutes</div>
+      </div>
+      <div className="text-2xl font-bold text-[#a6a6a6]">:</div>
+      <div>
+        <div className="text-3xl font-bold text-[#ceff1f]">{formatted.seconds}</div>
+        <div className="text-sm text-[#a6a6a6] mt-1">Seconds</div>
+      </div>
+    </div>
   );
 }
 
@@ -160,17 +171,25 @@ function FAQAccordion() {
         const open = openIndex === index;
 
         return (
-          <div key={item.question} className="brand-panel overflow-hidden rounded-[24px]">
+          <div key={item.question} className="bg-[#1a1a1a] rounded-lg border border-[#292929] overflow-hidden">
             <button
               type="button"
               onClick={() => setOpenIndex(open ? -1 : index)}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-[1.02rem] font-bold transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ceff1f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121212]"
+              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-white hover:bg-[#292929] transition"
             >
               <span>{item.question}</span>
-              {open ? <ChevronUpIcon className="h-5 w-5 shrink-0 text-[#0e6b78]" /> : <ChevronDownIcon className="h-5 w-5 shrink-0 text-[#0e6b78]" />}
+              {open ? (
+                <ChevronUpIcon className="h-5 w-5 shrink-0 text-[#ceff1f]" />
+              ) : (
+                <ChevronDownIcon className="h-5 w-5 shrink-0 text-[#a6a6a6]" />
+              )}
             </button>
-            <div className={`grid transition-[grid-template-rows,opacity] duration-300 ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-              <div className="overflow-hidden px-5 pb-5 text-[0.98rem] leading-7 text-[#a6a6a6]">{item.answer}</div>
+            <div
+              className={`grid transition-[grid-template-rows,opacity] duration-300 ${
+                open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden px-6 pb-4 text-[#a6a6a6] leading-relaxed">{item.answer}</div>
             </div>
           </div>
         );
@@ -181,256 +200,189 @@ function FAQAccordion() {
 
 export function DigitalAuraLandingPage() {
   return (
-    <main className="brand-page relative min-h-screen overflow-x-hidden">
-      <div className="brand-announcement sticky top-0 z-40 px-4 py-3 text-center text-[0.98rem] font-bold tracking-tight sm:text-[1.15rem]">
-        <span className="mr-2 inline-block align-[-2px] text-lg">🎉</span>
-        Launch offer <span className="text-red-500">Expiring</span> in 24 Hours. Get Instant Access Now, <span className="text-red-500">Hurry Up!</span>
+    <main className="min-h-screen bg-[#0a0a0a] text-[#fafafa]">
+      {/* Top Banner */}
+      <div className="bg-gradient-to-r from-[#ceff1f]/20 to-transparent border-b border-[#ceff1f]/30 text-white py-3 px-4 text-center text-sm font-semibold">
+        🎉 LAUNCH OFFER — 98% OFF this Week! · Only ₹99 · Price jumps to ₹1499 after countdown
       </div>
 
-      <div className="brand-shell mx-auto flex w-full flex-col gap-7">
-        <section className="brand-hero brand-section space-y-6 px-4 py-8 sm:px-6 sm:py-10 lg:px-7">
-          <div className="text-center">
-            <h2 className="text-[1.5rem] font-black leading-tight text-white sm:text-[2.1rem]">
-              <ClockIcon className="mr-2 inline-block h-8 w-8 align-[-6px] text-[#c3c9d5]" />
-              First Time On Internet &quot;Biggest Sale Ever&quot;
-            </h2>
+      {/* Countdown */}
+      <div className="bg-[#1a1a1a] border-b border-[#292929] py-3 px-4 text-center">
+        <div className="text-sm text-[#a6a6a6] mb-2">Offer ends in</div>
+        <CountdownTimer />
+      </div>
+
+      {/* Header/Navigation */}
+      <header className="border-b border-[#292929] bg-[#0a0a0a] sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="text-2xl font-bold text-[#ceff1f]">Ultimate Luxury Bundle</div>
+          <button className="bg-[#ceff1f] text-[#0a0a0a] px-6 py-2 rounded-lg font-semibold hover:bg-[#e6ff4d] transition">
+            Enroll Now
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="text-center mb-12">
+          <div className="inline-block bg-[#ceff1f]/10 text-[#ceff1f] border border-[#ceff1f]/20 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            India&apos;s #1 Luxury Content Bundle
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
+            1000+ Aesthetic Luxury Lifestyle Reels<br />Create Viral Content. Earn Money.
+          </h1>
+          <p className="text-xl text-[#a6a6a6] mb-8 max-w-3xl mx-auto">
+            No PC. No paid software. No subscriptions. Just your phone and 1000+ ready-to-post reels — instant access, lifetime use.
+          </p>
+
+          {/* Pricing */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="text-3xl font-bold text-white">₹99</span>
+            <span className="text-lg text-[#a6a6a6] line-through">₹1499</span>
+            <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-3 py-1 rounded font-bold">98% OFF</span>
           </div>
 
-          <div className="brand-panel border-2 border-dotted border-white/75 px-4 py-5 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] sm:px-6 sm:py-7">
-            <h1 className="text-[2.1rem] font-black leading-none tracking-tight text-white sm:text-[3.2rem] lg:text-[3.9rem]">
-              Get The Ultimate
-              <br />
-              1000+ Luxury Lifestyle Reels Bundle Now!!🎬
-            </h1>
-          </div>
+          {/* CTA Button */}
+          <a
+            href={buyUrl}
+            className="inline-block bg-[#ceff1f] text-[#0a0a0a] px-8 py-4 rounded-lg font-extrabold text-lg hover:bg-[#e6ff4d] transition mb-4 shadow-[0_0_20px_rgba(206,255,31,0.3)]"
+          >
+            🛒 Buy Now ₹99 (₹1499)
+          </a>
 
-          <div className="brand-panel px-4 py-2.5 text-center text-[1rem] font-black tracking-[0.02em] sm:text-[1.15rem]">
-            * Lifetime Access - One-time payment - Instant Access - 100% Risk Free *
-          </div>
+          <p className="text-sm text-[#a6a6a6]">
+            ✓ 7-day refund · ✓ Lifetime Access · ✓ Instant Download
+          </p>
+        </div>
 
-          <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-            <div className="brand-panel overflow-hidden rounded-[22px]">
-              <img src="https://digitalaura.shop/wp-content/uploads/2025/08/Untitled-design-22.png" alt="1000+ Luxury Lifestyle Reels Bundle" className="h-full w-full object-cover" />
+        {/* Key Stats */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 py-12 border-t border-b border-[#292929]">
+          {[
+            { label: "Videos", value: "1000+" },
+            { label: "Formats", value: "MP4 HD" },
+            { label: "No Setup", value: "Ready Use" },
+            { label: "Phone Only", value: "Mobile" },
+            { label: "Lifetime", value: "Forever" },
+            { label: "Support", value: "24/7" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="font-bold text-lg text-[#ceff1f]">{stat.value}</div>
+              <div className="text-sm text-[#a6a6a6]">{stat.label}</div>
             </div>
-            <div className="brand-panel p-4 sm:p-6">
-              <h3 className="text-center text-[1.55rem] font-black leading-tight text-black sm:text-[1.95rem]">NOW AVAILABLE FOR INSTANT DOWNLOAD!</h3>
-              <div className="my-4 rounded-full border border-[#ceff1f]/35 bg-[#0a0a0a] px-4 py-2.5 text-center text-[0.98rem] font-black leading-tight text-[#ceff1f] sm:text-[1.08rem]">
-                This is a launch offer and it will expire in the next 24 Hours
-              </div>
-              <ul className="space-y-4 text-[1.02rem] font-bold leading-7 text-white sm:text-[1.06rem]">
-                {featureItems.map((item) => (
-                  <li key={item.title} className="flex items-start gap-2.5">
-                    <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-[#ceff1f]" />
-                    <span>{item.title}</span>
+          ))}
+        </div>
+      </section>
+
+      {/* Sample Videos */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-white mb-4 text-center">Sample Videos 👀</h2>
+        <p className="text-center text-[#a6a6a6] mb-12">See how aesthetic luxury lifestyle reels can grow your account</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {[
+            "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle1.mp4",
+            "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle2.mp4",
+            "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle3.mp4",
+            "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle4.mp4",
+          ].map((src, index) => (
+            <div key={src} className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-[#292929] shadow-sm hover:shadow-md transition">
+              <video controls className="w-full aspect-[9/16] bg-black object-cover" poster="https://digitalaura.shop/wp-content/uploads/2025/08/Untitled-design-22.png">
+                <source src={src} type="video/mp4" />
+              </video>
+              <div className="px-3 py-2 text-sm font-semibold text-[#a6a6a6]">Sample video {index + 1}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Before/After Comparison */}
+      <section className="bg-[#0a0a0a] py-16 border-t border-[#292929]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">What You Will Achieve</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-[#1a1a1a] rounded-lg p-8 border border-red-500/20">
+              <h3 className="text-2xl font-bold text-red-500 mb-6 text-center">❌ BEFORE</h3>
+              <ul className="space-y-4">
+                {beforeItems.map((item, i) => (
+                  <li key={i} className="flex gap-3 text-[#a6a6a6]">
+                    <span className="text-red-500 font-bold mt-1">✗</span>
+                    <span>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-[#1a1a1a] rounded-lg p-8 border border-green-500/20">
+              <h3 className="text-2xl font-bold text-green-500 mb-6 text-center">✅ AFTER</h3>
+              <ul className="space-y-4">
+                {afterItems.map((item, i) => (
+                  <li key={i} className="flex gap-3 text-[#a6a6a6]">
+                    <span className="text-green-500 font-bold mt-1">✓</span>
+                    <span>{item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-
-          <div className="space-y-3 text-center">
-            <div className="text-[1.25rem] font-black leading-tight text-white sm:text-[1.6rem]">ONLY <span className="rounded px-1.5 text-[#ffeb59]">99/-</span> TODAY Delivered Instantly. Start Using Right Now!</div>
-            <div className="text-[1.1rem] font-black text-white">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</div>
-          </div>
-        </section>
-
-        <section className="brand-panel brand-section space-y-8 px-4 py-8 sm:px-6 lg:px-7">
-          <SectionLabel>This For You If You are...</SectionLabel>
-
-          <div className="space-y-8">
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.10,000 Bonuses FREE ! 👇</h3>
-              <div className="flex justify-center"><BuyButton /></div>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.5rem] font-black sm:text-[1.8rem]">SAMPLE VIDEOS 👀</h3>
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                {[
-                  "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle1.mp4",
-                  "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle2.mp4",
-                  "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle3.mp4",
-                  "https://digitalaura.shop/wp-content/uploads/2025/08/Luxury-Lifestyle4.mp4",
-                ].map((src, index) => (
-                  <div key={src} className="brand-panel overflow-hidden rounded-[24px]">
-                    <video controls className="aspect-[9/16] w-full bg-black object-cover" poster="https://digitalaura.shop/wp-content/uploads/2025/08/Untitled-design-22.png">
-                      <source src={src} type="video/mp4" />
-                    </video>
-                    <div className="border-t border-white/10 bg-black px-4 py-3 text-left text-sm font-bold text-[#a6a6a6]">Sample video {index + 1}</div>
-                  </div>
-                ))}
-              </div>
-              <h3 className="text-[1.55rem] font-black leading-tight sm:text-[2rem]">CHECK HOW LUXURY LIFESTYLE REELS CAN GROW YOUR THEME PAGE QUICKLY</h3>
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.95rem]">Ultimate 1000+ Viral Luxury Lifestyle Reels Bundle Will Help You To Generate More Followers, Views, Engagement</h3>
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.10,000 Bonuses FREE ! 👇</h3>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.2rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-              <h3 className="text-[1.65rem] font-black sm:text-[1.95rem]">Where can I Upload these Luxury Lifestyle Reels</h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-                {socialPlatforms.map((platform) => (
-                  <div key={platform} className="brand-chip flex items-center justify-between rounded-[9999px] px-4 py-3 text-[0.98rem] font-bold">
-                    <span>{platform}</span>
-                    <span className="text-[#ceff1f]">◉</span>
-                  </div>
-                ))}
-              </div>
-              <h3 className="text-[1.55rem] font-black leading-tight sm:text-[1.9rem]">How Can I Make Money By Posting These Reels?</h3>
-              <div className="grid gap-4 md:grid-cols-2">
-                {moneyIdeas.map((item) => (
-                  <div key={item} className="brand-panel flex items-center gap-3 px-4 py-4 text-left font-bold">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0a0a0a] text-xl text-[#ceff1f]">✅</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.8rem]">Ready To Start Your Own Theme Page, So Follow The Steps Below:</h3>
-              <div className="grid gap-4 md:grid-cols-3">
-                {stepItems.map((item, index) => (
-                  <div key={item} className="brand-panel p-5 text-left">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#0a0a0a] text-xl font-black text-[#ceff1f]">0{index + 1}</div>
-                    <div className="flex gap-3 text-[1.01rem] font-bold leading-7 text-white">
-                      <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-[#ceff1f]" />
-                      <span>{item}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <CountdownTimer />
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.10,000 Bonuses FREE ! 👇</h3>
-              <h3 className="text-[1.2rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-            </div>
-
-            <div className="space-y-5 text-center">
-              <h3 className="text-[1.55rem] font-black sm:text-[2rem]">What You will achieve By This Bundle?</h3>
-              <div className="grid gap-5 lg:grid-cols-2">
-                <CardShell className="brand-panel-strong p-5 text-left sm:p-6">
-                  <h4 className="mb-4 text-center text-[1.2rem] font-black text-[#ff5b5b]">BEFORE THIS</h4>
-                  <div className="space-y-3.5 text-[1.02rem] font-bold leading-7 text-[#fafafa]">
-                    {beforeItems.map((item) => (
-                      <div key={item.text} className="flex gap-3">
-                        <CloseIcon className="mt-1 h-5 w-5 shrink-0 text-[#ff5b5b]" />
-                        <span>{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardShell>
-
-                <CardShell className="brand-panel p-5 text-left sm:p-6">
-                  <h4 className="mb-4 text-center text-[1.2rem] font-black text-[#ceff1f]">AFTER THIS</h4>
-                  <div className="space-y-3.5 text-[1.02rem] font-bold leading-7 text-[#fafafa]">
-                    {afterItems.map((item) => (
-                      <div key={item.text} className="flex gap-3">
-                        <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-[#ceff1f]" />
-                        <span>{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardShell>
-              </div>
-              <div className="flex justify-center pt-1"><BuyButton /></div>
-            </div>
-
-            <div className="brand-panel space-y-5 px-4 py-6 text-center sm:px-6">
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.9rem]">Register in next 5 Minutes To Unlock the bonuses worth Rs 10,000/- For Free</h3>
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {bonusItems.map((item) => (
-                  <div key={item.title} className="brand-panel p-5 text-left">
-                    <div className="mb-3 inline-flex rounded-full border border-[#ceff1f]/20 bg-[#0a0a0a] px-3 py-1 text-[0.82rem] font-black uppercase tracking-[0.12em] text-[#ceff1f]">{item.subtitle}</div>
-                    <h4 className="text-[1.2rem] font-black leading-tight">{item.title}</h4>
-                    <div className="mt-3 text-[1.05rem] font-black text-[#ceff1f]">{item.price}</div>
-                  </div>
-                ))}
-              </div>
-              <h3 className="text-[1.45rem] font-black sm:text-[1.8rem]">Time Is Running Out. BUY IT NOW!</h3>
-              <CountdownTimer />
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.10,000 Bonuses FREE ! 👇</h3>
-              <div className="flex justify-center"><BuyButton /></div>
-              <h3 className="text-[1.15rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-
-              <CardShell className="p-5 text-left sm:p-7">
-                <h3 className="text-center text-[1.45rem] font-black">YOUR ORDER TODAY</h3>
-                <div className="mt-5 space-y-4">
-                  <div className="rounded-[18px] border border-[#292929] bg-[#0a0a0a] p-4 text-center">
-                    <h4 className="text-[1.15rem] font-black">Ultimate 1000+ Viral Luxury Reels Bundle</h4>
-                    <div className="mt-2 text-[1.15rem] font-black text-[#ceff1f]">₹1499/- ₹99/-</div>
-                  </div>
-                  {bonusItems.map((item, index) => (
-                    <div key={item.title} className="rounded-[18px] border border-dashed border-[#292929] bg-[#0a0a0a] p-4 text-center">
-                      <h4 className="text-[1.03rem] font-black leading-tight">
-                        BONUS #{index + 1}: You Will Get {item.title}
-                        {index === 0
-                          ? " Which Skyrocket Your Social Media Growth. 🚀"
-                          : index === 1
-                            ? " Which You Can Upload On Your Page To Grow."
-                            : index === 2
-                              ? ""
-                              : index === 3
-                                ? " (📍 Reach Millions Of Audience Without Spending Money)"
-                                : index === 4
-                                  ? " (🔍 Grow Your Followers Daily )"
-                                  : " (Which Used To Make More High Quality Content For Your Theme Page)"}
-                      </h4>
-                      <div className="mt-2 text-[1rem] font-black text-[#ceff1f]">₹1999/-</div>
-                    </div>
-                  ))}
-                  <div className="rounded-[18px] border border-[#292929] bg-[#000] px-4 py-4 text-center text-[1.1rem] font-black text-white">
-                    You pay only <span className="text-[#ceff1f]">₹12995/-</span> ₹99/-
-                  </div>
-                  <p className="text-center text-[1.02rem] font-bold leading-7 text-[#a6a6a6]">Don’t miss out on this incredible offer. Grab the Ultimate Viral Luxury Lifestyle Reels Bundle you need, plus massive bonuses – all for just Rs. 99!</p>
-                  <div className="flex justify-center"><BuyButton compact /></div>
-                  <p className="text-center text-[0.98rem] font-bold leading-7 text-[#a6a6a6]">✅ Secure Payment Processing. ✅ Instant Delivery, Lifetime Access. ✅ One Time Payment Only</p>
-                </div>
-              </CardShell>
-
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.8rem]">What Our Customers Say About Us!</h3>
-
-              <div className="brand-panel p-4 text-left sm:p-6">
-                <h3 className="mb-4 text-center text-[1.45rem] font-black sm:text-[1.8rem]">Frequently Asked Questions (FAQs)</h3>
-                <FAQAccordion />
-              </div>
-
-              <h3 className="text-[1.2rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-              <h3 className="text-[1.3rem] font-black sm:text-[1.55rem]">Take Action Now, Don&apos;t Regret Again. BUY IT NOW! ⭐⭐⭐ ⭐⭐</h3>
-              <div className="flex justify-center"><BuyButton /></div>
-            </div>
-          </div>
-        </section>
-
-        <footer className="brand-panel brand-panel-strong px-4 py-6 text-center text-[0.95rem] leading-7 sm:px-6">
-          <p className="text-[1.05rem] font-black text-white">Copyright © 2025 Digital Aura</p>
-          <p className="mt-3 space-x-2">
-            <a className="brand-link font-bold hover:text-[#ceff1f]" href="https://www.termsfeed.com/live/aac4ac86-5bee-444e-ba48-a9fd2452726d">Privacy Policy</a>
-            <span>|</span>
-            <a className="brand-link font-bold hover:text-[#ceff1f]" href="https://www.termsfeed.com/live/e7a5beeb-bb1d-479f-baa2-b18146104907">Disclaimer</a>
-            <span>|</span>
-            <a className="brand-link font-bold hover:text-[#ceff1f]" href="https://www.termsfeed.com/live/56e9df0e-0b20-4fe1-94e5-891cf2e5fc9d">Terms and Conditions</a>
-          </p>
-          <p className="mt-3 text-left text-[0.9rem] leading-7 text-[#a6a6a6] sm:text-center">
-            This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, This site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc. As stipulated by law, we can not and do not make any guarantees about your ability to get results or earn any money with our ideas, information, tools or strategies. We just want to help you by giving great content, direction and strategies that worked well for us and our students and that we believe can move you forward. All of our terms, privacy policies and disclaimers for this program and website can be accessed via the link above. We feel transparency is important and we hold ourselves (and you) to a high standard of integrity. Thanks for stopping by. We hope this training and content brings you a lot of value.
-          </p>
-        </footer>
-      </div>
-
-      <div className="fixed bottom-5 right-5 z-50">
-        <button type="button" className="brand-chat group relative flex h-16 w-16 items-center justify-center rounded-full shadow-[0_18px_44px_rgba(206,255,31,0.2)] transition-transform duration-300 hover:scale-105" aria-label="Open chat">
-          <WhatsAppIcon className="h-8 w-8 text-[#ceff1f]" />
-        </button>
-        <div className="brand-chat absolute -top-28 right-0 hidden w-72 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.22)] group-hover:block">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-[0.95rem] font-bold">Hello 👋</p>
-              <p className="mt-1 text-[1.15rem] font-black">Can we help you?</p>
-            </div>
-            <CloseIcon className="h-5 w-5 shrink-0 text-[#ceff1f]" />
-          </div>
-          <div className="mt-4 rounded-[18px] border border-[#292929] bg-[#0a0a0a] px-3 py-3 text-[0.9rem] font-bold text-[#a6a6a6]">Powered by Joinchat</div>
         </div>
-      </div>
+      </section>
+
+      {/* Bonuses */}
+      <section className="bg-[#0a0a0a] py-16 border-t border-[#292929]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">6 Amazing Bonuses Worth ₹10,000</h2>
+          <p className="text-center text-[#a6a6a6] mb-12">Absolutely FREE when you enroll now!</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {bonusItems.map((item, index) => (
+              <div key={item.title} className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-[#292929] shadow-sm hover:shadow-md transition p-6">
+                <div className="inline-block bg-[#ceff1f]/10 text-[#ceff1f] border border-[#ceff1f]/20 px-3 py-1 rounded text-sm font-bold mb-3">
+                  Bonus {index + 1}
+                </div>
+                <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm font-bold text-[#a6a6a6]">Was {item.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+        <FAQAccordion />
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white py-16 border-t border-[#292929]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to Create Viral Luxury Content?</h2>
+          <p className="text-xl mb-8 text-[#a6a6a6]">
+            Get 1000+ reels + 6 bonuses for just ₹99. Limited offer — grab yours now!
+          </p>
+          <a
+            href={buyUrl}
+            className="inline-block bg-[#ceff1f] text-[#0a0a0a] px-10 py-4 rounded-lg font-extrabold text-lg hover:bg-[#e6ff4d] transition shadow-[0_0_20px_rgba(206,255,31,0.3)]"
+          >
+            Enroll Now ₹99
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#0a0a0a] text-[#a6a6a6] py-12 border-t border-[#292929]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white font-semibold mb-2">© 2026 Digital Aura · Luxury Bundle</p>
+          <div className="space-x-6 text-sm">
+            <a href="https://www.termsfeed.com/live/aac4ac86-5bee-444e-ba48-a9fd2452726d" className="hover:text-white transition">
+              Privacy Policy
+            </a>
+            <a href="https://www.termsfeed.com/live/34eb8140-1e5a-42d4-98f0-8f1457126922" className="hover:text-white transition">
+              Terms & Conditions
+            </a>
+          </div>
+          <p className="text-xs mt-6 max-w-3xl mx-auto text-[#666666]">
+            This site is not a part of Facebook Inc. This site is NOT endorsed by Facebook in any way. We make no guarantees about your ability to get results or earn money. See our terms for details.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }

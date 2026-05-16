@@ -4,13 +4,8 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import type { BonusItem, ComparisonItem, FAQItem, FeatureItem } from "../digital-aura/types";
 import {
-  ArrowRightIcon,
-  CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-  ClockIcon,
-  CloseIcon,
-  WhatsAppIcon,
 } from "../digital-aura/icons";
 
 const buyUrl = "https://superprofile.bio/vp/300--cooking---nutrition-reels-bundle---viral-food-video-content-";
@@ -32,38 +27,23 @@ const audienceItems = [
 ];
 
 const featureItems: FeatureItem[] = [
-  { icon: "✅", title: "300+ ready-to-post Aesthetic videos (MP4 format)" },
-  { icon: "✅", title: "Healthy recipes and cooking inspiration" },
-  { icon: "✅", title: "Smart food hacks and quick meals" },
-  { icon: "✅", title: "Nutrition and wellness facts" },
-  { icon: "✅", title: "Lifestyle and diet motivation" },
-  { icon: "✅", title: "Faceless, clean, and adaptable content for any page" },
-  { icon: "✅", title: "Instant Download Link + Lifetime Access" },
-  { icon: "✅", title: "Crystal Clear HD Quality" },
-  { icon: "✅", title: "Huge Time Saver Perfect for Busy Creators & Students" },
-  { icon: "✅", title: "Immediate Delivery – No Waiting, No Delays" },
-  { icon: "✅", title: "Free Quality Bonuses Of Worth ₹20,000/-" },
+  { icon: "✓", title: "300+ ready-to-post Aesthetic videos (MP4 format)" },
+  { icon: "✓", title: "Healthy recipes and cooking inspiration" },
+  { icon: "✓", title: "Smart food hacks and quick meals" },
+  { icon: "✓", title: "Nutrition and wellness facts" },
+  { icon: "✓", title: "Lifestyle and diet motivation" },
+  { icon: "✓", title: "Faceless, clean, and adaptable content for any page" },
+  { icon: "✓", title: "Instant Download Link + Lifetime Access" },
+  { icon: "✓", title: "Crystal Clear HD Quality" },
+  { icon: "✓", title: "Huge Time Saver Perfect for Busy Creators & Students" },
+  { icon: "✓", title: "Immediate Delivery – No Waiting, No Delays" },
+  { icon: "✓", title: "Free Quality Bonuses Of Worth ₹20,000/-" },
 ];
 
-const socialPlatforms = ["Facebook", "Twitter", "Youtube", "Pinterest", "Instagram", "Snapchat"];
 
-const moneyIdeas = [
-  "Sponsored Posts",
-  "Sell Your Own Products",
-  "Promote Your Services",
-  "Exclusive Content",
-  "Offer Consulting or Coaching",
-  "Merchandise/Shoutouts",
-];
-
-const stepItems = [
-  "Get Our Cooking Reels Bundle Today!",
-  "Download & Start Uploading These Reels",
-  "Grow Your Theme Page And Start Earning",
-];
 
 const beforeItems: ComparisonItem[] = [
-  { text: "Roz “viral food reels” ya “cooking content ideas” search karna" },
+  { text: 'Roz "viral food reels" ya "cooking content ideas" search karna' },
   { text: "Random videos download (low quality / watermark problem)" },
   { text: "Editing, cutting, captions me 1–2 ghante waste" },
   { text: "Views stuck at 100–500, engagement low" },
@@ -106,7 +86,7 @@ const bonusItems: Array<BonusItem & { details: string; src: string }> = [
     subtitle: "Bonus 3",
     price: "₹5000/-",
     details:
-      "Learn how to turn your Instagram page into a powerful growth machine. This course covers proven strategies for gaining followers quickly, boosting reel engagement, and accessing Instagram’s monetization features. Ideal for anyone looking to build a strong theme page.",
+      "Learn how to turn your Instagram page into a powerful growth machine. This course covers proven strategies for gaining followers quickly, boosting reel engagement, and accessing Instagram's monetization features. Ideal for anyone looking to build a strong theme page.",
     src: "/images/cooking/20250904_1636251-1024x1024.png",
   },
   {
@@ -182,32 +162,14 @@ function CountdownTimer() {
   }, [secondsLeft]);
 
   return (
-    <ul className="flex items-center justify-center gap-3 text-sm font-black tracking-[0.18em] text-white/90 sm:gap-5 sm:text-base">
-      <li>{formatted.hours} : Hours</li>
-      <li>{formatted.minutes} : Minutes</li>
-      <li>{formatted.seconds}Seconds</li>
-    </ul>
+    <div className="flex items-center justify-center gap-2 text-white">
+      <span className="text-2xl font-bold">{formatted.hours}h</span>
+      <span className="text-2xl">:</span>
+      <span className="text-2xl font-bold">{formatted.minutes}m</span>
+      <span className="text-2xl">:</span>
+      <span className="text-2xl font-bold">{formatted.seconds}s</span>
+    </div>
   );
-}
-
-function BuyButton({ compact = false }: { compact?: boolean }) {
-  return (
-    <a
-      href={buyUrl}
-      className={`brand-button group inline-flex items-center justify-center gap-3 px-7 py-3 text-center font-black uppercase tracking-[0.12em] ${compact ? "px-5 py-2.5 text-[0.72rem]" : "text-[0.85rem]"}`}
-    >
-      <span>{compact ? "BUY NOW" : "BUY NOW ₹69 ₹699"}</span>
-      <ArrowRightIcon className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-    </a>
-  );
-}
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-center text-[1.35rem] font-black leading-tight tracking-tight sm:text-[1.6rem]">{children}</h2>;
-}
-
-function CardShell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`brand-panel rounded-[24px] ${className}`}>{children}</div>;
 }
 
 function FAQAccordion() {
@@ -219,17 +181,17 @@ function FAQAccordion() {
         const open = openIndex === index;
 
         return (
-          <div key={item.question} className="brand-panel overflow-hidden rounded-[24px]">
+          <div key={item.question} className="bg-white/10 backdrop-blur border border-white/20 rounded-lg overflow-hidden">
             <button
               type="button"
               onClick={() => setOpenIndex(open ? -1 : index)}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-[1.02rem] font-bold transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ceff1f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121212]"
+              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-white hover:bg-white/5 transition-colors"
             >
               <span>{item.question}</span>
-              {open ? <ChevronUpIcon className="h-5 w-5 shrink-0 text-[#0e6b78]" /> : <ChevronDownIcon className="h-5 w-5 shrink-0 text-[#0e6b78]" />}
+              {open ? <ChevronUpIcon className="h-5 w-5" /> : <ChevronDownIcon className="h-5 w-5" />}
             </button>
             <div className={`grid transition-[grid-template-rows,opacity] duration-300 ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-              <div className="overflow-hidden px-5 pb-5 text-[0.98rem] leading-7 text-[#a6a6a6]">{item.answer}</div>
+              <div className="overflow-hidden px-6 pb-4 text-gray-300 leading-7">{item.answer}</div>
             </div>
           </div>
         );
@@ -240,305 +202,256 @@ function FAQAccordion() {
 
 export function CookingLandingPage() {
   return (
-    <main className="brand-page relative min-h-screen overflow-x-hidden">
-      <div className="brand-announcement sticky top-0 z-40 px-4 py-3 text-center text-[0.98rem] font-bold tracking-tight sm:text-[1.15rem]">
-        <span className="mr-2 inline-block align-[-2px] text-lg">🎉</span>
-        Launch offer <span className="text-red-500">Expiring</span> in 24 Hours. Get Instant Access Now, <span className="text-red-500">Hurry Up!</span>
+    <main className="min-h-screen bg-black text-white">
+      {/* Top Banner */}
+      <div className="bg-gradient-to-r from-red-600 to-red-700 py-3 px-4 text-center text-sm font-bold">
+        🎉 LAUNCH OFFER — 95% OFF this Week! · Only ₹69 · Price jumps to ₹699 after countdown
       </div>
 
-      <div className="brand-shell mx-auto flex w-full flex-col gap-7">
-        <section className="brand-hero brand-section space-y-6 px-4 py-8 sm:px-6 sm:py-10 lg:px-7">
-          <div className="text-center">
-            <h2 className="text-[1.5rem] font-black leading-tight text-white sm:text-[2.1rem]">
-              <ClockIcon className="mr-2 inline-block h-8 w-8 align-[-6px] text-[#c3c9d5]" />
-              First Time On Internet &quot;Biggest Sale Ever&quot;
-            </h2>
-          </div>
+      {/* Countdown */}
+      <div className="bg-black/50 border-b border-white/10 py-4 px-4 text-center">
+        <div className="text-sm text-gray-300 mb-3">Offer ends in</div>
+        <CountdownTimer />
+        <div className="text-xs text-gray-400 mt-2">· Price jumps to ₹699 after</div>
+      </div>
 
-          <div className="brand-panel border-2 border-dotted border-white/75 px-4 py-5 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] sm:px-6 sm:py-7">
-            <h1 className="text-[2.1rem] font-black leading-none tracking-tight text-white sm:text-[3.2rem] lg:text-[3.9rem]">
-              Get The Ultimate
-              <br />
-              300+ Cooking &amp; Nutrition Reels Bundle Now!!🎬
-            </h1>
-          </div>
+      {/* Header */}
+      <header className="border-b border-white/10 bg-black/80 backdrop-blur sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="text-2xl font-black text-white">Ultimate Cooking Bundle</div>
+          <a
+            href={buyUrl}
+            className="bg-lime-400 text-black px-6 py-2 rounded-lg font-bold hover:bg-lime-300 transition"
+          >
+            Enroll Now
+          </a>
+        </div>
+      </header>
 
-          <div className="brand-panel px-4 py-2.5 text-center text-[1rem] font-black tracking-[0.02em] sm:text-[1.15rem]">
-            * Lifetime Access - One-time payment - Instant Access - 100% Risk Free *
-          </div>
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
+        <div className="inline-block bg-white/10 text-lime-400 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-white/20">
+          India&apos;s #1 Cooking Content Bundle
+        </div>
 
-          <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <div className="brand-panel overflow-hidden rounded-[22px] p-2" style={{ border: '4px solid #ff9a2a' }}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] bg-black">
-                <video controls className="h-full w-full object-cover" poster={heroImage}>
-                  <source src={sampleVideoSources[0]} type="video/mp4" />
+        <h1 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Create Viral Cooking Reels.
+          <br />
+          <span className="text-lime-400">Earn Money.</span>
+        </h1>
+
+        <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+          300+ Ready-to-post cooking reels. No PC. No paid software. No subscriptions. Just your phone and the right content — instant access, lifetime use.
+        </p>
+
+        {/* Pricing */}
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <span className="text-5xl font-black text-lime-400">₹69</span>
+          <div className="flex flex-col items-start">
+            <span className="text-2xl text-gray-500 line-through">₹699</span>
+            <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">95% OFF</span>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <a
+          href={buyUrl}
+          className="inline-block bg-lime-400 text-black px-12 py-4 rounded-xl font-black text-lg hover:bg-lime-300 transition shadow-2xl mb-6"
+        >
+          Enroll Now — ₹69 →
+        </a>
+
+        <p className="text-sm text-gray-400">
+          ✓ 7-day refund · ✓ Lifetime Access · ✓ Instant Download
+        </p>
+
+        {/* Social Proof */}
+        <div className="mt-12 pt-12 border-t border-white/10">
+          <p className="text-gray-400 text-sm mb-6">TRUSTED BY THOUSANDS</p>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {["2.5M Followers", "3.6M Views", "₹2L/Month", "100+ Success Stories"].map((stat) => (
+              <div key={stat} className="text-center">
+                <div className="text-2xl font-black text-lime-400">{stat.split(" ")[0]}</div>
+                <div className="text-sm text-gray-400">{stat.split(" ").slice(1).join(" ")}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Stats */}
+      <section className="border-y border-white/10 py-12 bg-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "300+", label: "Ready-to-Post Videos" },
+              { value: "MP4 HD", label: "Crystal Clear Format" },
+              { value: "Lifetime", label: "No Subscriptions" },
+              { value: "24/7", label: "Support Included" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl font-black text-lime-400 mb-2">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-4xl font-black text-white mb-12 text-center">This Bundle Is For You If You Are</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {audienceItems.map((item) => (
+            <div key={item.label} className="bg-white/5 border border-white/10 p-6 rounded-lg text-center hover:bg-white/10 transition">
+              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-lime-400/50">
+                <Image src={item.src} alt={item.label} fill sizes="96px" className="object-cover" />
+              </div>
+              <h3 className="font-bold text-white">{item.label}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Sample Videos */}
+      <section className="bg-white/5 border-y border-white/10 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-black text-white mb-4 text-center">Sample Videos 👀</h2>
+          <p className="text-center text-gray-300 mb-12">See how aesthetic cooking reels grow your account</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sampleVideoSources.map((src, index) => (
+              <div key={src} className="bg-black border-2 border-lime-400/50 rounded-lg overflow-hidden">
+                <video controls className="w-full aspect-[9/16] bg-black" poster={heroImage}>
+                  <source src={src} type="video/mp4" />
                 </video>
+                <div className="p-3 text-sm font-bold text-gray-300 bg-black/50">Sample {index + 1}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What You Get */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-4xl font-black text-white mb-12 text-center">What You Get Inside</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {featureItems.map((item) => (
+            <div key={item.title} className="flex gap-4 bg-white/5 border border-white/10 p-6 rounded-lg">
+              <div className="flex-shrink-0 text-2xl text-lime-400 font-bold">✓</div>
+              <div>
+                <p className="font-semibold text-white">{item.title}</p>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="bg-white text-black rounded-[22px] p-6 shadow-lg">
-              <h3 className="text-center text-[1.45rem] font-extrabold leading-tight sm:text-[1.65rem]">NOW AVAILABLE FOR INSTANT DOWNLOAD!</h3>
-              <div className="my-4 rounded px-2 py-3 text-center text-[0.98rem] font-black leading-tight text-white bg-red-600">
-                This is a launch offer and it will expire in the next 24 Hours
-              </div>
-              <ul className="space-y-3 text-[1.02rem] font-bold leading-7 text-black sm:text-[1.06rem]">
-                {featureItems.map((item) => (
-                  <li key={item.title} className="flex items-start gap-3">
-                    <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#ceff1f] text-black">✓</span>
-                    <span>{item.title}</span>
-                  </li>
+      {/* Before After */}
+      <section className="bg-white/5 border-y border-white/10 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-black text-white mb-12 text-center">Before & After Using This Bundle</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-red-500/10 border-l-4 border-red-500 p-8 rounded-lg">
+              <h3 className="text-2xl font-black text-red-400 mb-6">❌ WITHOUT BUNDLE</h3>
+              <div className="space-y-4">
+                {beforeItems.map((item) => (
+                  <div key={item.text} className="flex gap-3">
+                    <span className="text-red-500 font-bold text-xl">✗</span>
+                    <span className="text-gray-300">{item.text}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
+            <div className="bg-lime-500/10 border-l-4 border-lime-400 p-8 rounded-lg">
+              <h3 className="text-2xl font-black text-lime-400 mb-6">✅ WITH BUNDLE</h3>
+              <div className="space-y-4">
+                {afterItems.map((item) => (
+                  <div key={item.text} className="flex gap-3">
+                    <span className="text-lime-400 font-bold text-xl">✓</span>
+                    <span className="text-gray-300">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="space-y-3 text-center">
-            <div className="text-[1.25rem] font-black leading-tight text-white sm:text-[1.6rem]">
-              ONLY <span className="rounded px-1.5 text-[#ffeb59]">₹69/-</span> TODAY Delivered Instantly. Start Using Right Now!
-            </div>
-            <div className="text-[1.1rem] font-black text-white">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</div>
-          </div>
-        </section>
-
-        <section className="brand-panel brand-section space-y-8 px-4 py-8 sm:px-6 lg:px-7">
-          <SectionLabel>This Is For You If You Are</SectionLabel>
-
-          <div className="space-y-8">
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.20,000 Bonuses FREE ! 👇</h3>
-              <div className="flex justify-center">
-                <BuyButton />
+      {/* Bonuses */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-4xl font-black text-white mb-4 text-center">4 FREE Bonuses Worth ₹20,000</h2>
+        <p className="text-center text-gray-300 mb-12">Absolutely FREE when you enroll now!</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {bonusItems.map((item, index) => (
+            <div key={item.title} className="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-lime-400/50 transition">
+              <div className="relative h-48 w-full bg-black border-b border-white/10">
+                <Image src={item.src} alt={item.title} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
               </div>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.65rem] font-black sm:text-[1.95rem]">This Is For You If You Are</h3>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {audienceItems.map((item) => (
-                  <div key={item.label} className="brand-panel overflow-hidden p-4 text-center">
-                    <div className="relative mx-auto aspect-square w-full max-w-[180px] overflow-hidden rounded-[20px] border border-white/10 bg-[#0a0a0a]">
-                      <Image src={item.src} alt={item.label} fill sizes="180px" className="object-cover" />
-                    </div>
-                    <h4 className="mt-3 text-[1.05rem] font-black">{item.label}</h4>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.5rem] font-black sm:text-[1.8rem]">SAMPLE VIDEOS 👀</h3>
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                {sampleVideoSources.map((src, index) => (
-                  <div key={src} className="brand-panel overflow-hidden rounded-[24px]">
-                    <video controls className="aspect-[9/16] w-full bg-black object-cover" poster={heroImage}>
-                      <source src={src} type="video/mp4" />
-                    </video>
-                    <div className="border-t border-white/10 bg-black px-4 py-3 text-left text-sm font-bold text-[#a6a6a6]">Sample video {index + 1}</div>
-                  </div>
-                ))}
-              </div>
-              <h3 className="text-[1.55rem] font-black leading-tight sm:text-[2rem]">CHECK HOW AESTHETIC COOKING REELS CAN GROW YOUR ACCOUNT QUICKLY</h3>
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.95rem]">Ultimate 300+ Cooking &amp; Nutrition Videos Bundle Will Help You To Generate More Followers, Views, Engagement</h3>
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.20,000 Bonuses FREE ! 👇</h3>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.2rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-              <h3 className="text-[1.65rem] font-black sm:text-[1.95rem]">Where can I Uploadthese Reels</h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-                {socialPlatforms.map((platform) => (
-                  <div key={platform} className="brand-chip flex items-center justify-between rounded-[9999px] px-4 py-3 text-[0.98rem] font-bold">
-                    <span>{platform}</span>
-                    <span className="text-[#ceff1f]">◉</span>
-                  </div>
-                ))}
-              </div>
-              <h3 className="text-[1.55rem] font-black leading-tight sm:text-[1.9rem]">How Can I Make Money ByPosting These Reels?</h3>
-              <div className="grid gap-4 md:grid-cols-2">
-                {moneyIdeas.map((item) => (
-                  <div key={item} className="brand-panel flex items-center gap-3 px-4 py-4 text-left font-bold">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0a0a0a] text-xl text-[#ceff1f]">✅</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.8rem]">Ready To Start Your Own Theme Page, So Follow The Steps Below:</h3>
-              <div className="grid gap-4 md:grid-cols-3">
-                {stepItems.map((item, index) => (
-                  <div key={item} className="brand-panel p-5 text-left">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#0a0a0a] text-xl font-black text-[#ceff1f]">0{index + 1}</div>
-                    <div className="flex gap-3 text-[1.01rem] font-bold leading-7 text-white">
-                      <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-[#ceff1f]" />
-                      <span>{item}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <CountdownTimer />
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.20,000 Bonuses FREE ! 👇</h3>
-              <h3 className="text-[1.2rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-            </div>
-
-            <div className="space-y-5 text-center">
-              <h3 className="text-[1.55rem] font-black sm:text-[2rem]">What You will achieve By This Bundle?</h3>
-              <div className="grid gap-5 lg:grid-cols-2">
-                <CardShell className="brand-panel-strong p-5 text-left sm:p-6">
-                  <h4 className="mb-4 text-center text-[1.2rem] font-black text-[#ff5b5b]">BEFORE THIS</h4>
-                  <div className="space-y-3.5 text-[1.02rem] font-bold leading-7 text-[#fafafa]">
-                    {beforeItems.map((item) => (
-                      <div key={item.text} className="flex gap-3">
-                        <CloseIcon className="mt-1 h-5 w-5 shrink-0 text-[#ff5b5b]" />
-                        <span>{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardShell>
-
-                <CardShell className="brand-panel p-5 text-left sm:p-6">
-                  <h4 className="mb-4 text-center text-[1.2rem] font-black text-[#ceff1f]">AFTER THIS</h4>
-                  <div className="space-y-3.5 text-[1.02rem] font-bold leading-7 text-[#fafafa]">
-                    {afterItems.map((item) => (
-                      <div key={item.text} className="flex gap-3">
-                        <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-[#ceff1f]" />
-                        <span>{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardShell>
-              </div>
-              <div className="flex justify-center pt-1">
-                <BuyButton />
-              </div>
-            </div>
-
-            <div className="brand-panel space-y-5 px-4 py-6 text-center sm:px-6">
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.9rem]">BUT WAIT!!!</h3>
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.9rem]">That’s Not Everything…</h3>
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.9rem]">You Can Unlock These 4 Amazing Bonuses Worth ₹20,000 For Absolutely FREE</h3>
-              <h3 className="text-[1.2rem] font-black">Only If You Buy Bundle Right Now!!!</h3>
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                {bonusItems.map((item) => (
-                  <div key={item.title} className="brand-panel overflow-hidden p-0 text-left">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-white/10 bg-[#0a0a0a]">
-                      <Image src={item.src} alt={item.title} fill sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
-                    </div>
-                    <div className="p-5">
-                      <div className="mb-3 inline-flex rounded-full border border-[#ceff1f]/20 bg-[#0a0a0a] px-3 py-1 text-[0.82rem] font-black uppercase tracking-[0.12em] text-[#ceff1f]">
-                        {item.subtitle}
-                      </div>
-                      <h4 className="text-[1.2rem] font-black leading-tight">{item.title}</h4>
-                      <p className="mt-3 text-[0.98rem] leading-7 text-[#a6a6a6]">{item.details}</p>
-                      <div className="mt-3 text-[1.05rem] font-black text-[#ceff1f]">Priced: {item.price}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <h3 className="text-[1.45rem] font-black sm:text-[1.8rem]">Get All This Inside The Bundle</h3>
-              <h3 className="text-[1.45rem] font-black sm:text-[1.8rem]">Total Value Of Bonuses: ₹20,000/</h3>
-              <h3 className="text-[1.45rem] font-black sm:text-[1.8rem]">Buy Today For Just Rs. 69/-</h3>
-              <h3 className="text-[1.45rem] font-black sm:text-[1.8rem]">Time is running out. Reserve your place now!</h3>
-              <CountdownTimer />
-              <h3 className="text-[1.4rem] font-black leading-tight sm:text-[1.75rem]">Click On This Button To BUY &amp; Get Rs.20,000 Bonuses FREE ! 👇</h3>
-              <div className="flex justify-center">
-                <BuyButton />
-              </div>
-              <h3 className="text-[1.15rem] font-black">Register before 13, May to unlock bonuses worth ₹ 20,000</h3>
-              <div className="flex justify-center gap-2 text-[#ffce3a]">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span className="text-white">Rated 5 out of 5</span>
-              </div>
-              <h3 className="text-[1.05rem] font-black text-white">RATED 4.8 OUT OF 5</h3>
-
-              <CardShell className="p-5 text-left sm:p-7">
-                <h3 className="text-center text-[1.45rem] font-black">YOUR ORDER TODAY</h3>
-                <div className="mt-5 space-y-4">
-                  <div className="rounded-[18px] border border-[#292929] bg-[#0a0a0a] p-4 text-center">
-                    <h4 className="text-[1.15rem] font-black">Ultimate 300+ Cooking &amp; Nutrition Reels Bundle</h4>
-                    <div className="mt-2 text-[1.15rem] font-black text-[#ceff1f]">₹699/- ₹69/-</div>
-                  </div>
-                  {bonusItems.map((item, index) => (
-                    <div key={item.title} className="rounded-[18px] border border-dashed border-[#292929] bg-[#0a0a0a] p-4 text-center">
-                      <h4 className="text-[1.03rem] font-black leading-tight">BONUS #{index + 1}: {item.title}</h4>
-                      <div className="mt-2 text-[1rem] font-black text-[#ceff1f]">₹5000/-</div>
-                    </div>
-                  ))}
-                  <div className="rounded-[18px] border border-[#292929] bg-[#000] px-4 py-4 text-center text-[1.1rem] font-black text-white">
-                    You pay only <span className="text-[#ceff1f]">₹20699/-</span> ₹69/-
-                  </div>
-                  <p className="text-center text-[1.02rem] font-bold leading-7 text-[#a6a6a6]">Don’t miss out on this incredible offer. Grab the Ultimate Cooking &amp; Nutrition Bundle you need, plus massive bonuses, all for just Rs. 69!</p>
-                  <div className="flex justify-center">
-                    <BuyButton compact />
-                  </div>
-                  <p className="text-center text-[0.98rem] font-bold leading-7 text-[#a6a6a6]">✅ Secure Payment Processing. ✅ Instant Delivery, Lifetime Access. ✅ One Time Payment Only</p>
-                  <h3 className="text-center text-[1.15rem] font-black">Offer ends Today</h3>
-                  <div className="flex justify-center">
-                    <a className="brand-button group inline-flex items-center justify-center gap-3 px-6 py-3 text-center font-black uppercase tracking-[0.12em] text-[0.82rem]" href={buyUrl}>
-                      <span>Download Now</span>
-                      <ArrowRightIcon className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
-                  </div>
+              <div className="p-5">
+                <div className="inline-block bg-lime-400/20 text-lime-400 px-2 py-1 rounded text-xs font-bold mb-3">
+                  Bonus {index + 1}
                 </div>
-              </CardShell>
-
-              <h3 className="text-[1.45rem] font-black leading-tight sm:text-[1.8rem]">What Our Customers Say About Us!</h3>
-
-              <div className="brand-panel p-4 text-left sm:p-6">
-                <h3 className="mb-4 text-center text-[1.45rem] font-black sm:text-[1.8rem]">Frequently Asked Questions (FAQs)</h3>
-                <FAQAccordion />
-              </div>
-
-              <h3 className="text-[1.2rem] font-black">&quot;FOR FIRST 100 PEOPLE ONLY&quot;</h3>
-              <h3 className="text-[1.3rem] font-black sm:text-[1.55rem]">Take Action Now, Don&apos;t Regret Again. BUY IT NOW! ⭐⭐⭐ ⭐⭐</h3>
-              <div className="flex justify-center">
-                <BuyButton />
+                <h3 className="font-bold text-white mb-2 line-clamp-2">{item.title}</h3>
+                <p className="text-sm text-gray-400 mb-3 line-clamp-2">{item.details}</p>
+                <p className="text-sm font-bold text-lime-400">Was {item.price}</p>
               </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        <footer className="brand-panel brand-panel-strong px-4 py-6 text-center text-[0.95rem] leading-7 sm:px-6">
-          <p className="text-[1.05rem] font-black text-white">Copyright © 2026 Digital aura</p>
-          <p className="mt-3 space-x-2">
-            <a className="brand-link font-bold hover:text-[#ceff1f]" href="https://www.termsfeed.com/live/aac4ac86-5bee-444e-ba48-a9fd2452726d">
+      {/* Money Back Guarantee */}
+      <section className="bg-white/5 border-y border-white/10 py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-black text-white mb-6">100% Money-Back Guarantee</h2>
+          <p className="text-2xl text-gray-300 mb-6">
+            We have a <span className="text-lime-400 font-black">No Questions Asked</span> 100% Money Back Guarantee.
+          </p>
+          <p className="text-gray-400 text-lg">
+            Just message us within 7 days if it is not for you and we will refund your money instantly. No questions, no hassles. Nothing to lose. Everything to gain.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-4xl font-black text-white mb-12 text-center">Frequently Asked Questions</h2>
+        <FAQAccordion />
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-gradient-to-r from-lime-600 to-lime-500 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl lg:text-5xl font-black text-black mb-6">Ready to Start Making Viral Content?</h2>
+          <p className="text-xl text-black/80 mb-8">
+            Get 300+ reels + 4 bonuses worth ₹20,000 for just ₹69. Limited time offer!
+          </p>
+          <a
+            href={buyUrl}
+            className="inline-block bg-black text-lime-400 px-12 py-5 rounded-xl font-black text-lg hover:bg-black/80 transition shadow-2xl"
+          >
+            Enroll Now — ₹69 →
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white font-bold mb-4">© 2026 Digital Aura · 300+ Cooking Reels Bundle</p>
+          <div className="space-x-6 text-sm text-gray-400 mb-6">
+            <a href="https://www.termsfeed.com/live/cbca1312-dd69-430d-9830-e5818c0a1269" className="hover:text-lime-400 transition">
               Privacy Policy
             </a>
-            <span>|</span>
-            <a className="brand-link font-bold hover:text-[#ceff1f]" href="https://www.termsfeed.com/live/e7a5beeb-bb1d-479f-baa2-b18146104907">
-              Disclaimer
+            <a href="https://www.termsfeed.com/live/34eb8140-1e5a-42d4-98f0-8f1457126922" className="hover:text-lime-400 transition">
+              Terms & Conditions
             </a>
-            <span>|</span>
-            <a className="brand-link font-bold hover:text-[#ceff1f]" href="https://www.termsfeed.com/live/56e9df0e-0b20-4fe1-94e5-891cf2e5fc9d">
-              Terms and Conditions
-            </a>
-          </p>
-          <p className="mt-3 text-left text-[0.9rem] leading-7 text-[#a6a6a6] sm:text-center">
-            This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, This site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc. As stipulated by law, we can not and do not make any guarantees about your ability to get results or earn any money with our ideas, information, tools or strategies. We just want to help you by giving great content, direction and strategies that worked well for us and our students and that we believe can move you forward. All of our terms, privacy policies and disclaimers for this program and website can be accessed via the link above. We feel transparency is important and we hold ourselves (and you) to a high standard of integrity. Thanks for stopping by. We hope this training and content brings you a lot of value.
-          </p>
-        </footer>
-      </div>
-
-      <div className="fixed bottom-5 right-5 z-50">
-        <button type="button" className="brand-chat group relative flex h-16 w-16 items-center justify-center rounded-full shadow-[0_18px_44px_rgba(206,255,31,0.2)] transition-transform duration-300 hover:scale-105" aria-label="Open chat">
-          <WhatsAppIcon className="h-8 w-8 text-[#ceff1f]" />
-        </button>
-        <div className="brand-chat absolute -top-28 right-0 hidden w-72 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.22)] group-hover:block">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="text-[0.95rem] font-bold">Hello 👋</p>
-              <p className="mt-1 text-[1.15rem] font-black">Can we help you?</p>
-            </div>
-            <CloseIcon className="h-5 w-5 shrink-0 text-[#ceff1f]" />
           </div>
-          <div className="mt-4 rounded-[18px] border border-[#292929] bg-[#0a0a0a] px-3 py-3 text-[0.9rem] font-bold text-[#a6a6a6]">Powered by Joinchat</div>
+          <p className="text-xs text-gray-500 max-w-3xl mx-auto">
+            This site is not a part of Facebook Inc. This site is NOT endorsed by Facebook in any way. We make no guarantees about your ability to get results or earn money. See our terms for details.
+          </p>
         </div>
-      </div>
+      </footer>
     </main>
   );
 }
