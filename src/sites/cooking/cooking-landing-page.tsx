@@ -162,7 +162,7 @@ function CountdownTimer() {
   }, [secondsLeft]);
 
   return (
-    <div className="flex items-center justify-center gap-2 text-white">
+    <div className="flex items-center justify-center gap-2 text-black">
       <span className="text-2xl font-bold">{formatted.hours}h</span>
       <span className="text-2xl">:</span>
       <span className="text-2xl font-bold">{formatted.minutes}m</span>
@@ -181,17 +181,17 @@ function FAQAccordion() {
         const open = openIndex === index;
 
         return (
-          <div key={item.question} className="bg-white/10 backdrop-blur border border-white/20 rounded-lg overflow-hidden">
+          <div key={item.question} className="bg-white border border-black/10 rounded-lg overflow-hidden shadow-sm">
             <button
               type="button"
               onClick={() => setOpenIndex(open ? -1 : index)}
-              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-white hover:bg-white/5 transition-colors"
+              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-black hover:bg-gray-50 transition-colors"
             >
               <span>{item.question}</span>
               {open ? <ChevronUpIcon className="h-5 w-5" /> : <ChevronDownIcon className="h-5 w-5" />}
             </button>
             <div className={`grid transition-[grid-template-rows,opacity] duration-300 ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-              <div className="overflow-hidden px-6 pb-4 text-gray-300 leading-7">{item.answer}</div>
+              <div className="overflow-hidden px-6 pb-4 text-gray-700 leading-7">{item.answer}</div>
             </div>
           </div>
         );
@@ -202,26 +202,26 @@ function FAQAccordion() {
 
 export function CookingLandingPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#fbfbfb] text-black font-poppins">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-red-600 to-red-700 py-3 px-4 text-center text-sm font-bold">
-        🎉 LAUNCH OFFER — 95% OFF this Week! · Only ₹69 · Price jumps to ₹699 after countdown
+      <div className="bg-[#8c0000] py-3 px-4 text-center text-sm font-bold text-white">
+        🎉 LAUNCH OFFER — 95% OFF this Week! · Only ₹89 · Price jumps to ₹699 after countdown
       </div>
 
       {/* Countdown */}
-      <div className="bg-black/50 border-b border-white/10 py-4 px-4 text-center">
-        <div className="text-sm text-gray-300 mb-3">Offer ends in</div>
+      <div className="bg-black/5 border-b border-black/10 py-4 px-4 text-center">
+        <div className="text-sm text-gray-600 mb-3">Offer ends in</div>
         <CountdownTimer />
-        <div className="text-xs text-gray-400 mt-2">· Price jumps to ₹699 after</div>
+        <div className="text-xs text-gray-500 mt-2">· Price jumps to ₹699 after</div>
       </div>
 
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/80 backdrop-blur sticky top-0 z-40">
+      <header className="border-b border-black/10 bg-white/80 backdrop-blur sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div className="text-2xl font-black text-white">Ultimate Cooking Bundle</div>
+          <div className="text-2xl font-black text-black">Ultimate Cooking Bundle</div>
           <a
             href={buyUrl}
-            className="bg-lime-400 text-black px-6 py-2 rounded-lg font-bold hover:bg-lime-300 transition"
+            className="bg-[#8c0000] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#a30000] transition"
           >
             Enroll Now
           </a>
@@ -230,57 +230,52 @@ export function CookingLandingPage() {
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
-        <div className="inline-block bg-white/10 text-lime-400 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-white/20">
+        <div className="inline-block bg-[#8c0000]/10 text-[#8c0000] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#8c0000]/20">
           India&apos;s #1 Cooking Content Bundle
         </div>
 
-        <h1 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+        <h1 className="text-5xl lg:text-6xl font-black text-black mb-6 leading-tight font-garamond italic">
           Create Viral Cooking Reels.
           <br />
-          <span className="text-lime-400">Earn Money.</span>
+          <span className="text-[#8c0000]">Earn Money.</span>
         </h1>
 
-        <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+        {/* Video in place of text */}
+        <div className="max-w-3xl mx-auto mb-10">
+          <video controls className="w-full aspect-video bg-black rounded-lg border-2 border-[#8c0000]/50 shadow-xl" poster={heroImage}>
+            <source src={sampleVideoSources[0]} type="video/mp4" />
+          </video>
+        </div>
+
+        <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
           300+ Ready-to-post cooking reels. No PC. No paid software. No subscriptions. Just your phone and the right content — instant access, lifetime use.
         </p>
 
         {/* Pricing */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <span className="text-5xl font-black text-lime-400">₹69</span>
+          <span className="text-5xl font-black text-[#8c0000]">₹89</span>
           <div className="flex flex-col items-start">
             <span className="text-2xl text-gray-500 line-through">₹699</span>
-            <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">95% OFF</span>
+            <span className="bg-[#8c0000] text-white px-3 py-1 rounded-full text-sm font-bold">95% OFF</span>
           </div>
         </div>
 
         {/* CTA Button */}
         <a
           href={buyUrl}
-          className="inline-block bg-lime-400 text-black px-12 py-4 rounded-xl font-black text-lg hover:bg-lime-300 transition shadow-2xl mb-6"
+          className="inline-block bg-[#8c0000] text-white px-12 py-4 rounded-xl font-black text-lg hover:bg-[#a30000] transition shadow-2xl mb-6"
         >
-          Enroll Now — ₹69 →
+          Enroll Now — ₹89 →
         </a>
 
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-500">
           ✓ 7-day refund · ✓ Lifetime Access · ✓ Instant Download
         </p>
 
-        {/* Social Proof */}
-        <div className="mt-12 pt-12 border-t border-white/10">
-          <p className="text-gray-400 text-sm mb-6">TRUSTED BY THOUSANDS</p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {["2.5M Followers", "3.6M Views", "₹2L/Month", "100+ Success Stories"].map((stat) => (
-              <div key={stat} className="text-center">
-                <div className="text-2xl font-black text-lime-400">{stat.split(" ")[0]}</div>
-                <div className="text-sm text-gray-400">{stat.split(" ").slice(1).join(" ")}</div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Key Stats */}
-      <section className="border-y border-white/10 py-12 bg-white/5">
+      <section className="border-y border-black/10 py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -290,37 +285,23 @@ export function CookingLandingPage() {
               { value: "24/7", label: "Support Included" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl font-black text-lime-400 mb-2">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className="text-3xl font-black text-[#8c0000] mb-2">{stat.value}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Who It's For */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-4xl font-black text-white mb-12 text-center">This Bundle Is For You If You Are</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {audienceItems.map((item) => (
-            <div key={item.label} className="bg-white/5 border border-white/10 p-6 rounded-lg text-center hover:bg-white/10 transition">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-lime-400/50">
-                <Image src={item.src} alt={item.label} fill sizes="96px" className="object-cover" />
-              </div>
-              <h3 className="font-bold text-white">{item.label}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Sample Videos */}
-      <section className="bg-white/5 border-y border-white/10 py-16">
+      <section className="bg-black border-y border-black/10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-black text-white mb-4 text-center">Sample Videos 👀</h2>
+          <h2 className="text-4xl font-black text-white mb-4 text-center font-garamond italic">Sample Videos 👀</h2>
           <p className="text-center text-gray-300 mb-12">See how aesthetic cooking reels grow your account</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sampleVideoSources.map((src, index) => (
-              <div key={src} className="bg-black border-2 border-lime-400/50 rounded-lg overflow-hidden">
+              <div key={src} className="bg-black border-2 border-[#8c0000]/50 rounded-lg overflow-hidden">
                 <video controls className="w-full aspect-[9/16] bg-black" poster={heroImage}>
                   <source src={src} type="video/mp4" />
                 </video>
@@ -328,18 +309,37 @@ export function CookingLandingPage() {
               </div>
             ))}
           </div>
+          
+          {/* Check Out Section beside video */}
+          <div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-8">
+            <div className="flex-1 max-w-md">
+              <h3 className="text-2xl font-black text-white mb-4 font-garamond italic">Ready to Start Making Viral Content?</h3>
+              <p className="text-gray-300 mb-6">Includes bonus content worth ₹20,000.</p>
+              <a
+                href={buyUrl}
+                className="inline-block bg-[#8c0000] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#a30000] transition shadow-2xl"
+              >
+                Download Now 89/-
+              </a>
+            </div>
+            <div className="flex-1 max-w-md">
+              <video controls className="w-full aspect-video bg-black rounded-lg border-2 border-[#8c0000]/50" poster={heroImage}>
+                <source src={sampleVideoSources[0]} type="video/mp4" />
+              </video>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* What You Get */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-4xl font-black text-white mb-12 text-center">What You Get Inside</h2>
+        <h2 className="text-4xl font-black text-black mb-12 text-center font-garamond italic">This Bundle Is For You If You Are</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {featureItems.map((item) => (
-            <div key={item.title} className="flex gap-4 bg-white/5 border border-white/10 p-6 rounded-lg">
-              <div className="flex-shrink-0 text-2xl text-lime-400 font-bold">✓</div>
+            <div key={item.title} className="flex gap-4 bg-white border border-black/10 p-6 rounded-lg shadow-sm">
+              <div className="flex-shrink-0 text-2xl text-[#8c0000] font-bold">✓</div>
               <div>
-                <p className="font-semibold text-white">{item.title}</p>
+                <p className="font-semibold text-black">{item.title}</p>
               </div>
             </div>
           ))}
@@ -347,28 +347,28 @@ export function CookingLandingPage() {
       </section>
 
       {/* Before After */}
-      <section className="bg-white/5 border-y border-white/10 py-16">
+      <section className="bg-white border-y border-black/10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-black text-white mb-12 text-center">Before & After Using This Bundle</h2>
+          <h2 className="text-4xl font-black text-black mb-12 text-center font-garamond italic">Before & After Using This Bundle</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-red-500/10 border-l-4 border-red-500 p-8 rounded-lg">
-              <h3 className="text-2xl font-black text-red-400 mb-6">❌ WITHOUT BUNDLE</h3>
+            <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg">
+              <h3 className="text-2xl font-black text-red-600 mb-6 font-garamond italic">❌ WITHOUT BUNDLE</h3>
               <div className="space-y-4">
                 {beforeItems.map((item) => (
                   <div key={item.text} className="flex gap-3">
                     <span className="text-red-500 font-bold text-xl">✗</span>
-                    <span className="text-gray-300">{item.text}</span>
+                    <span className="text-gray-700">{item.text}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-lime-500/10 border-l-4 border-lime-400 p-8 rounded-lg">
-              <h3 className="text-2xl font-black text-lime-400 mb-6">✅ WITH BUNDLE</h3>
+            <div className="bg-[#8c0000]/10 border-l-4 border-[#8c0000] p-8 rounded-lg">
+              <h3 className="text-2xl font-black text-[#8c0000] mb-6 font-garamond italic">✅ WITH BUNDLE</h3>
               <div className="space-y-4">
                 {afterItems.map((item) => (
                   <div key={item.text} className="flex gap-3">
-                    <span className="text-lime-400 font-bold text-xl">✓</span>
-                    <span className="text-gray-300">{item.text}</span>
+                    <span className="text-[#8c0000] font-bold text-xl">✓</span>
+                    <span className="text-gray-700">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -379,21 +379,21 @@ export function CookingLandingPage() {
 
       {/* Bonuses */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-4xl font-black text-white mb-4 text-center">4 FREE Bonuses Worth ₹20,000</h2>
-        <p className="text-center text-gray-300 mb-12">Absolutely FREE when you enroll now!</p>
+        <h2 className="text-4xl font-black text-black mb-4 text-center font-garamond italic">4 FREE Bonuses Worth ₹20,000</h2>
+        <p className="text-center text-gray-600 mb-12">Absolutely FREE when you enroll now!</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {bonusItems.map((item, index) => (
-            <div key={item.title} className="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-lime-400/50 transition">
-              <div className="relative h-48 w-full bg-black border-b border-white/10">
+            <div key={item.title} className="bg-white border border-black/10 rounded-lg overflow-hidden hover:border-[#8c0000]/50 transition shadow-sm">
+              <div className="relative h-48 w-full bg-black border-b border-black/10">
                 <Image src={item.src} alt={item.title} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
               </div>
               <div className="p-5">
-                <div className="inline-block bg-lime-400/20 text-lime-400 px-2 py-1 rounded text-xs font-bold mb-3">
+                <div className="inline-block bg-[#8c0000]/10 text-[#8c0000] px-2 py-1 rounded text-xs font-bold mb-3">
                   Bonus {index + 1}
                 </div>
-                <h3 className="font-bold text-white mb-2 line-clamp-2">{item.title}</h3>
-                <p className="text-sm text-gray-400 mb-3 line-clamp-2">{item.details}</p>
-                <p className="text-sm font-bold text-lime-400">Was {item.price}</p>
+                <h3 className="font-bold text-black mb-2 line-clamp-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 mb-3 line-clamp-2">{item.details}</p>
+                <p className="text-sm font-bold text-[#8c0000]">Was {item.price}</p>
               </div>
             </div>
           ))}
@@ -401,13 +401,13 @@ export function CookingLandingPage() {
       </section>
 
       {/* Money Back Guarantee */}
-      <section className="bg-white/5 border-y border-white/10 py-16">
+      <section className="bg-white border-y border-black/10 py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-black text-white mb-6">100% Money-Back Guarantee</h2>
-          <p className="text-2xl text-gray-300 mb-6">
-            We have a <span className="text-lime-400 font-black">No Questions Asked</span> 100% Money Back Guarantee.
+          <h2 className="text-4xl font-black text-black mb-6 font-garamond italic">100% Money-Back Guarantee</h2>
+          <p className="text-2xl text-gray-700 mb-6">
+            We have a <span className="text-[#8c0000] font-black">No Questions Asked</span> 100% Money Back Guarantee.
           </p>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-600 text-lg">
             Just message us within 7 days if it is not for you and we will refund your money instantly. No questions, no hassles. Nothing to lose. Everything to gain.
           </p>
         </div>
@@ -415,35 +415,51 @@ export function CookingLandingPage() {
 
       {/* FAQ */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-4xl font-black text-white mb-12 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-4xl font-black text-black mb-12 text-center font-garamond italic">Frequently Asked Questions</h2>
         <FAQAccordion />
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-r from-lime-600 to-lime-500 py-16">
+      <section className="bg-gradient-to-r from-[#8c0000] to-[#a30000] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-black text-black mb-6">Ready to Start Making Viral Content?</h2>
-          <p className="text-xl text-black/80 mb-8">
-            Get 300+ reels + 4 bonuses worth ₹20,000 for just ₹69. Limited time offer!
+          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 font-garamond italic">Ready to Start Making Viral Content?</h2>
+          <p className="text-xl text-white/90 mb-8">
+            Includes bonus content worth ₹20,000.
           </p>
           <a
             href={buyUrl}
-            className="inline-block bg-black text-lime-400 px-12 py-5 rounded-xl font-black text-lg hover:bg-black/80 transition shadow-2xl"
+            className="inline-block bg-white text-[#8c0000] px-12 py-5 rounded-xl font-black text-lg hover:bg-gray-100 transition shadow-2xl"
           >
-            Enroll Now — ₹69 →
+            Download Now 89/-
           </a>
         </div>
       </section>
 
+      {/* Persistent Bottom Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-[#8c0000] text-white py-3 px-4 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="text-lg font-bold">300+ Cooking Reels Bundle</span>
+            <span className="text-sm bg-white/20 px-3 py-1 rounded-full">Only ₹89</span>
+          </div>
+          <a
+            href={buyUrl}
+            className="bg-white text-[#8c0000] px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition"
+          >
+            Download Now
+          </a>
+        </div>
+      </div>
+
       {/* Footer */}
-      <footer className="bg-black border-t border-white/10 py-12">
+      <footer className="bg-white border-t border-black/10 py-12 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white font-bold mb-4">© 2026 Digital Aura · 300+ Cooking Reels Bundle</p>
-          <div className="space-x-6 text-sm text-gray-400 mb-6">
-            <a href="https://www.termsfeed.com/live/cbca1312-dd69-430d-9830-e5818c0a1269" className="hover:text-lime-400 transition">
+          <p className="text-black font-bold mb-4">2026 Wekreators | 300+ Cooking Reels Bundle</p>
+          <div className="space-x-6 text-sm text-gray-500 mb-6">
+            <a href="https://www.termsfeed.com/live/cbca1312-dd69-430d-9830-e5818c0a1269" className="hover:text-[#8c0000] transition">
               Privacy Policy
             </a>
-            <a href="https://www.termsfeed.com/live/34eb8140-1e5a-42d4-98f0-8f1457126922" className="hover:text-lime-400 transition">
+            <a href="https://www.termsfeed.com/live/34eb8140-1e5a-42d4-98f0-8f1457126922" className="hover:text-[#8c0000] transition">
               Terms & Conditions
             </a>
           </div>
