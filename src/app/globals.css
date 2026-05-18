@@ -1,6 +1,33 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* Local ITC Garamond Condensed Light Italic (placed in public/fonts) */
+@font-face {
+  font-family: "ITC Garamond Condensed Light Italic";
+  src: url("/fonts/ITCGaramondStd-LtCondIta.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Utility classes used by the cooking site */
+.font-poppins {
+  font-family:
+    var(--font-poppins),
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.font-garamond {
+  font-family:
+    "ITC Garamond Condensed Light Italic", var(--font-garamond), serif;
+  font-style: italic;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -133,8 +160,16 @@
     @apply bg-background text-foreground;
     font-family: var(--font-inter), Inter, system-ui, sans-serif;
     background-image:
-      radial-gradient(circle at top left, rgba(206, 255, 31, 0.12), transparent 26%),
-      radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.06), transparent 18%),
+      radial-gradient(
+        circle at top left,
+        rgba(206, 255, 31, 0.12),
+        transparent 26%
+      ),
+      radial-gradient(
+        circle at 85% 10%,
+        rgba(255, 255, 255, 0.06),
+        transparent 18%
+      ),
       linear-gradient(180deg, #121212 0%, #0a0a0a 68%, #121212 100%);
     background-attachment: fixed;
   }
@@ -192,12 +227,64 @@
   .brand-section {
     color: var(--foreground);
   }
+  .glow-red-strong {
+    position: relative;
+    z-index: 0;
+    border-radius: inherit;
+    /* remove any box-shadow/pseudo-element halos so only text glow remains */
+    box-shadow: none !important;
+    text-shadow:
+      0 6px 20px rgba(255, 40, 40, 0.18),
+      0 2px 6px rgba(255, 80, 80, 0.08);
+  }
 
-  .brand-hero {
-    background: linear-gradient(180deg, rgba(31, 31, 31, 0.98), rgba(18, 18, 18, 0.98));
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  /* ensure no pseudo-element halos remain */
+  .glow-red-strong::before,
+  .glow-red-strong::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* subtle red glow for small sample cards (no hard stroke) */
+  .glow-red-subtle {
+    position: relative;
+    z-index: 0;
+    border-radius: inherit;
+    box-shadow: 0 6px 20px rgba(255, 40, 40, 0.12);
+  }
+
+  .glow-red-subtle::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(
+      circle at 50% 35%,
+      rgba(255, 70, 70, 0.14),
+      rgba(255, 40, 40, 0.06) 30%,
+      transparent 55%
+    );
+    filter: blur(8px) saturate(110%);
+  }
+
+  .glow-red-subtle::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -2;
+    background: radial-gradient(
+      circle at 50% 40%,
+      rgba(255, 60, 60, 0.08),
+      rgba(255, 40, 40, 0.03) 25%,
+      transparent 55%
+    );
+    filter: blur(18px) saturate(105%);
   }
 
   .brand-panel {
@@ -220,14 +307,21 @@
     border: 1px solid rgba(206, 255, 31, 0.4);
     background: linear-gradient(135deg, #ceff1f 0%, #9ddc13 100%);
     color: #0a0a0a;
-    box-shadow: rgba(206, 255, 31, 0.4) 0px 0px 0px 1px, rgba(206, 255, 31, 0.5) 0px 10px 40px -10px;
-    transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+    box-shadow:
+      rgba(206, 255, 31, 0.4) 0px 0px 0px 1px,
+      rgba(206, 255, 31, 0.5) 0px 10px 40px -10px;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      background-color 150ms ease;
   }
 
   .brand-button:hover,
   .brand-button:focus-visible {
     transform: translateY(-2px);
-    box-shadow: rgba(206, 255, 31, 0.5) 0px 0px 0px 1px, rgba(206, 255, 31, 0.55) 0px 14px 42px -12px;
+    box-shadow:
+      rgba(206, 255, 31, 0.5) 0px 0px 0px 1px,
+      rgba(206, 255, 31, 0.55) 0px 14px 42px -12px;
   }
 
   .brand-button:focus-visible {
