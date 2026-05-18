@@ -309,7 +309,7 @@ export function CookingLandingPage() {
     <main className="min-h-screen bg-[#fbfbfb] text-black font-poppins">
       {/* Top Banner */}
       <div className="bg-[#8c0000] py-3 px-4 text-center text-sm font-bold text-white">
-        🎉 LAUNCH OFFER — 95% OFF this Week! · Only ₹89 · Price jumps to ₹699
+        🎉 Launch offer — 95% off this week! · Only ₹89 · Price jumps to ₹699
         after countdown
       </div>
 
@@ -332,17 +332,22 @@ export function CookingLandingPage() {
         </div>
 
         <h1 className="text-9xl lg:text-[7rem] font-light mb-6 leading-tight font-garamond italic">
-          <span className="text-[#8c0000] glow-red-strong">300+ Viral</span>
+          <span className="text-black">
+            300+ Viral{" "}
+            <span className="text-[#8c0000] font-black">Cooking</span>
+          </span>
           <br />
-          <span className="text-black">Cooking Reels Bundle</span>
+          <span className="text-black">
+            Reels <span className="text-[#8c0000] font-black">Bundle</span>
+          </span>
           <br />
         </h1>
 
         {/* Video and description side-by-side (portrait video left on md+) */}
         <div className="max-w-4xl mx-auto mb-10">
-          <div className="flex flex-col items-start gap-8">
+          <div className="flex flex-col items-center gap-8">
             <div className="md:flex-1 mt-4 md:mt-6">
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-gray-600 leading-relaxed text-center mx-auto">
                 Ready-to-post aesthetic cooking videos to grow your food page
                 faster.
               </p>
@@ -356,7 +361,7 @@ export function CookingLandingPage() {
           <div className="flex flex-col items-start">
             <span className="text-2xl text-gray-500 line-through">₹699</span>
             <span className="bg-[#8c0000] text-white px-3 py-1 rounded-full text-sm font-bold">
-              95% OFF
+              95% off
             </span>
           </div>
         </div>
@@ -377,14 +382,10 @@ export function CookingLandingPage() {
       {/* Instant Download / Key Features - adapted from live site with custom icons */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-3xl font-light text-black mb-6 text-center font-garamond italic">
-          NOW AVAILABLE FOR INSTANT DOWNLOAD!
+          Now available for{" "}
+          <span className="text-[#8c0000] font-black">Instant</span>{" "}
+          <span className="text-[#8c0000] font-black">Download</span>!
         </h2>
-
-        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-          Everything you need to run a high-performing food page: aesthetic,
-          ready-to-post reels, clear formats, and bonus assets — all delivered
-          instantly.
-        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="flex items-start gap-4">
@@ -419,148 +420,6 @@ export function CookingLandingPage() {
               </div>
               <div className="text-sm text-gray-600">
                 High-retention, edit-ready vertical videos.
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
-              {/* Nutrition icon (apple + heart) */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9z"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9 7c0-1.7 1.3-3 3-3"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <div className="font-semibold text-black">Healthy & Trendy</div>
-              <div className="text-sm text-gray-600">
-                Recipes and formats that get shares and saves.
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
-              {/* Lightning / fast icon */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <div className="font-semibold text-black">
-                Post-Ready in Seconds
-              </div>
-              <div className="text-sm text-gray-600">
-                No editing required — open, caption, upload.
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
-              {/* Download / instant access icon */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 3v12"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8 11l4 4 4-4"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <rect
-                  x="3"
-                  y="17"
-                  width="18"
-                  height="4"
-                  rx="1"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                />
-              </svg>
-            </div>
-            <div>
-              <div className="font-semibold text-black">Instant Download</div>
-              <div className="text-sm text-gray-600">
-                Delivered immediately after purchase.
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
-              {/* HD camera */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="3"
-                  y="6"
-                  width="14"
-                  height="12"
-                  rx="2"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                />
-                <path
-                  d="M17 9l4-2v10l-4-2"
-                  stroke="#8c0000"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <div className="font-semibold text-black">Crystal Clear HD</div>
-              <div className="text-sm text-gray-600">
-                Sharp vertical videos, ready for reels & shorts.
               </div>
             </div>
           </div>
@@ -641,40 +500,46 @@ export function CookingLandingPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Key Stats */}
-      <section className="border-y border-black/10 py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "300+", label: "Ready-to-Post Videos" },
-              { value: "MP4 HD", label: "Crystal Clear Format" },
-              { value: "Lifetime", label: "No Subscriptions" },
-              { value: "24/7", label: "Support Included" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl font-black text-[#8c0000] mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Lightning / fast icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">
+                Post-Ready in Seconds
               </div>
-            ))}
+              <div className="text-sm text-gray-600">
+                No editing required — open, caption, upload.
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Key Stats removed per request */}
       {/* CHECK HOW AESTHETIC COOKING REELS CAN GROW YOUR ACCOUNT QUICKLY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-4xl font-light text-black mb-4 text-center font-garamond italic">
-          CHECK HOW AESTHETIC COOKING REELS CAN GROW YOUR ACCOUNT QUICKLY
+          Check how aesthetic cooking reels can{" "}
+          <span className="text-[#8c0000] font-black">grow your account</span>{" "}
+          quickly
         </h2>
-
-        <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
-          Short, snackable cooking reels build consistent reach — more saves,
-          shares and profile visits. Use our ready-made formats to post daily
-          and trigger algorithmic growth.
-        </p>
 
         <div className="grid gap-6 md:grid-cols-3">
           <div className="p-6 bg-[#fff7f7] rounded-lg text-center border border-black/5">
@@ -822,9 +687,7 @@ export function CookingLandingPage() {
           <h2 className="text-4xl font-light text-white mb-4 text-center font-garamond italic">
             Sample Videos 👀
           </h2>
-          <p className="text-center text-gray-300 mb-12">
-            See how aesthetic cooking reels grow your account
-          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sampleVideoSources.map((src, index) => (
               <div
@@ -866,7 +729,8 @@ export function CookingLandingPage() {
       {/* What You Get */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-4xl font-light text-black mb-12 text-center font-garamond italic">
-          This Bundle Is For You If You Are
+          <span className="font-black">Before</span> &amp;{" "}
+          <span className="font-black">after</span> using this bundle
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {featureItems.map((item) => (
@@ -889,12 +753,13 @@ export function CookingLandingPage() {
       <section className="bg-white border-y border-black/10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-light text-black mb-12 text-center font-garamond italic">
-            Before & After Using This Bundle
+            <span className="font-black">Before</span> &amp;{" "}
+            <span className="font-black">after</span> using this bundle
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg">
               <h3 className="text-2xl font-light text-red-600 mb-6 font-garamond italic">
-                ❌ WITHOUT BUNDLE
+                ❌ Without bundle
               </h3>
               <div className="space-y-4">
                 {beforeItems.map((item) => (
@@ -907,7 +772,7 @@ export function CookingLandingPage() {
             </div>
             <div className="bg-[#8c0000]/10 border-l-4 border-[#8c0000] p-8 rounded-lg">
               <h3 className="text-2xl font-light text-[#8c0000] mb-6 font-garamond italic">
-                ✅ WITH BUNDLE
+                ✅ With bundle
               </h3>
               <div className="space-y-4">
                 {afterItems.map((item) => (
@@ -928,10 +793,10 @@ export function CookingLandingPage() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 hidden"
       >
         <h2 className="text-4xl font-light text-black mb-4 text-center font-garamond italic">
-          4 FREE Bonuses Worth ₹20,000
+          4 free bonuses worth ₹20,000
         </h2>
         <p className="text-center text-gray-600 mb-12">
-          Absolutely FREE when you enroll now!
+          Absolutely free when you enroll now!
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {bonusItems.map((item, index) => (
@@ -971,7 +836,7 @@ export function CookingLandingPage() {
       <section className="bg-white border-y border-black/10 py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-light text-black mb-6 font-garamond italic">
-            100% Money-Back Guarantee
+            100% Money-back guarantee
           </h2>
           <p className="text-2xl text-gray-700 mb-6">
             We have a{" "}
@@ -991,7 +856,7 @@ export function CookingLandingPage() {
       {/* FAQ */}
       {/* Testimonials */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-3xl font-light text-black mb-6 text-center font-garamond italic">
+        <h2 className="text-4xl font-light text-black mb-6 text-center font-garamond italic">
           What Our Customers Say
         </h2>
 
