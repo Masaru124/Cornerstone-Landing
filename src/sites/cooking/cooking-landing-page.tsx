@@ -10,8 +10,7 @@ import type {
 } from "../digital-aura/types";
 import { ChevronDownIcon, ChevronUpIcon } from "../digital-aura/icons";
 
-const buyUrl =
-  "https://superprofile.bio/vp/300--cooking---nutrition-reels-bundle---viral-food-video-content-";
+const buyUrl = "https://superprofile.bio/vp/300--viral-cooking-reels-bundle";
 const heroImage = "/images/cooking/payment-moguj-1-3.webp";
 
 const audienceItems = [
@@ -719,7 +718,7 @@ export function CookingLandingPage() {
                 href={buyUrl}
                 className="inline-block bg-[#8c0000] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#a30000] transition shadow-2xl"
               >
-                Download Now 89/-
+                Download now — ₹89
               </a>
             </div>
           </div>
@@ -923,7 +922,7 @@ export function CookingLandingPage() {
             href={buyUrl}
             className="inline-block bg-white text-[#8c0000] px-12 py-5 rounded-xl font-black text-lg hover:bg-gray-100 transition shadow-2xl"
           >
-            Download Now 89/-
+            Download now — ₹89
           </a>
         </div>
       </section>
@@ -943,7 +942,7 @@ export function CookingLandingPage() {
             href={buyUrl}
             className="bg-white text-[#8c0000] px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition font-poppins"
           >
-            Download Now
+            Download now
           </a>
         </div>
       </div>
