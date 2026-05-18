@@ -374,6 +374,276 @@ export function CookingLandingPage() {
         </p>
       </section>
 
+      {/* Instant Download / Key Features - adapted from live site with custom icons */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-3xl font-light text-black mb-6 text-center font-garamond italic">
+          NOW AVAILABLE FOR INSTANT DOWNLOAD!
+        </h2>
+
+        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+          Everything you need to run a high-performing food page: aesthetic,
+          ready-to-post reels, clear formats, and bonus assets — all delivered
+          instantly.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Chef hat icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3c-2 0-4 1.5-4 3.5S9 10 12 10s4-2.5 4-3.5S14 3 12 3z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M5 13.5A3.5 3.5 0 0 1 8.5 10H15a3.5 3.5 0 0 1 3.5 3.5V15H5v-1.5z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">
+                300+ Aesthetic Reels
+              </div>
+              <div className="text-sm text-gray-600">
+                High-retention, edit-ready vertical videos.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Nutrition icon (apple + heart) */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9 7c0-1.7 1.3-3 3-3"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Healthy & Trendy</div>
+              <div className="text-sm text-gray-600">
+                Recipes and formats that get shares and saves.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Lightning / fast icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">
+                Post-Ready in Seconds
+              </div>
+              <div className="text-sm text-gray-600">
+                No editing required — open, caption, upload.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Download / instant access icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3v12"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M8 11l4 4 4-4"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  x="3"
+                  y="17"
+                  width="18"
+                  height="4"
+                  rx="1"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Instant Download</div>
+              <div className="text-sm text-gray-600">
+                Delivered immediately after purchase.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* HD camera */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="6"
+                  width="14"
+                  height="12"
+                  rx="2"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                />
+                <path
+                  d="M17 9l4-2v10l-4-2"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Crystal Clear HD</div>
+              <div className="text-sm text-gray-600">
+                Sharp vertical videos, ready for reels & shorts.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Bonus/gift icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="8"
+                  width="18"
+                  height="10"
+                  rx="1"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                />
+                <path
+                  d="M12 8v10"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M8 6c1-2 4-2 4 0s3 2 4 0"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">
+                Bonus Packs Included
+              </div>
+              <div className="text-sm text-gray-600">
+                Extra bundles worth ₹20,000 — free with purchase.
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-[#8c0000]/10 text-[#8c0000] rounded-lg flex items-center justify-center">
+              {/* Support / lifetime icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M8 12h8"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Lifetime Access</div>
+              <div className="text-sm text-gray-600">
+                Download once, use forever — no subscriptions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Stats */}
       <section className="border-y border-black/10 py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -392,6 +662,157 @@ export function CookingLandingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      {/* CHECK HOW AESTHETIC COOKING REELS CAN GROW YOUR ACCOUNT QUICKLY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-4xl font-light text-black mb-4 text-center font-garamond italic">
+          CHECK HOW AESTHETIC COOKING REELS CAN GROW YOUR ACCOUNT QUICKLY
+        </h2>
+
+        <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+          Short, snackable cooking reels build consistent reach — more saves,
+          shares and profile visits. Use our ready-made formats to post daily
+          and trigger algorithmic growth.
+        </p>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="p-6 bg-[#fff7f7] rounded-lg text-center border border-black/5">
+            <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-[#8c0000]/10 text-[#8c0000] mb-4">
+              {/* Followers up icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17h4l3-7 4 9 3-5 4 3"
+                  stroke="#8c0000"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="text-2xl font-black text-[#8c0000] mb-1">
+              +20–80% Reach
+            </div>
+            <div className="text-sm text-gray-600">
+              More organic viewers per post
+            </div>
+          </div>
+
+          <div className="p-6 bg-[#fff7f7] rounded-lg text-center border border-black/5">
+            <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-[#8c0000]/10 text-[#8c0000] mb-4">
+              {/* Engagement icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9z"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9 7c0-1.7 1.3-3 3-3"
+                  stroke="#8c0000"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="text-2xl font-black text-[#8c0000] mb-1">
+              +2–5× Engagement
+            </div>
+            <div className="text-sm text-gray-600">
+              Higher likes, comments and saves
+            </div>
+          </div>
+
+          <div className="p-6 bg-[#fff7f7] rounded-lg text-center border border-black/5">
+            <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-[#8c0000]/10 text-[#8c0000] mb-4">
+              {/* Share / Saves icon */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"
+                  stroke="#8c0000"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 3v13"
+                  stroke="#8c0000"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M8 7l4-4 4 4"
+                  stroke="#8c0000"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="text-2xl font-black text-[#8c0000] mb-1">
+              More Shares & Saves
+            </div>
+            <div className="text-sm text-gray-600">
+              Create evergreen content people keep reposting
+            </div>
+          </div>
+        </div>
+
+        {/* Digital-Aura image strip requested by user */}
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 items-stretch max-w-5xl mx-auto">
+          <Image
+            src="/images/digital-aura/IMG_20250815_1704421-509x1024.jpg"
+            alt="Digital Aura 1"
+            width={300}
+            height={600}
+            className="object-cover rounded-md border border-black/5 shadow-sm"
+          />
+
+          <Image
+            src="/images/digital-aura/IMG_20250815_1704181-512x1024.jpg"
+            alt="Digital Aura 2"
+            width={300}
+            height={600}
+            className="object-cover rounded-md border border-black/5 shadow-sm"
+          />
+
+          <Image
+            src="/images/digital-aura/IMG_20250815_1703471-511x1024.jpg"
+            alt="Digital Aura 3"
+            width={300}
+            height={600}
+            className="object-cover rounded-md border border-black/5 shadow-sm"
+          />
+
+          <Image
+            src="/images/digital-aura/IMG_20250815_1703241-512x1024.jpg"
+            alt="Digital Aura 4"
+            width={300}
+            height={600}
+            className="object-cover rounded-md border border-black/5 shadow-sm"
+          />
         </div>
       </section>
 
@@ -413,6 +834,7 @@ export function CookingLandingPage() {
                 <VideoWithGeneratedPoster
                   src={src}
                   className="w-full aspect-[9/16]"
+                  posterTime={index === 0 ? 13 : 0.5}
                 />
                 <div className="p-3 text-sm font-bold text-gray-300 bg-transparent">
                   Sample {index + 1}
@@ -567,6 +989,55 @@ export function CookingLandingPage() {
       </section>
 
       {/* FAQ */}
+      {/* Testimonials */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-3xl font-light text-black mb-6 text-center font-garamond italic">
+          What Our Customers Say
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="rounded-lg overflow-hidden bg-white border border-black/5 shadow-sm">
+            <Image
+              src="/images/digital-aura/20250131_162259-1024x682.png"
+              alt="Testimonial 1"
+              width={1024}
+              height={682}
+              className="object-cover w-full h-56"
+            />
+          </div>
+
+          <div className="rounded-lg overflow-hidden bg-white border border-black/5 shadow-sm">
+            <Image
+              src="/images/digital-aura/20250131_162641-1024x682.png"
+              alt="Testimonial 2"
+              width={1024}
+              height={682}
+              className="object-cover w-full h-56"
+            />
+          </div>
+
+          <div className="rounded-lg overflow-hidden bg-white border border-black/5 shadow-sm">
+            <Image
+              src="/images/digital-aura/20250131_162942-1024x682.png"
+              alt="Testimonial 3"
+              width={1024}
+              height={682}
+              className="object-cover w-full h-56"
+            />
+          </div>
+
+          <div className="rounded-lg overflow-hidden bg-white border border-black/5 shadow-sm">
+            <Image
+              src="/images/digital-aura/20250131_163223-1024x682.png"
+              alt="Testimonial 4"
+              width={1024}
+              height={682}
+              className="object-cover w-full h-56"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-4xl font-light text-black mb-12 text-center font-garamond italic">
           Frequently Asked Questions
