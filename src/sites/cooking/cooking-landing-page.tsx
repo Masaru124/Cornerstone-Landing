@@ -330,7 +330,7 @@ export function CookingLandingPage() {
           India&apos;s #1 Cooking Content Bundle
         </div>
 
-        <h1 className="text-9xl lg:text-[7rem] font-light mb-6 leading-tight font-garamond italic">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] font-light mb-6 leading-tight font-garamond italic">
           <span className="text-black">
             300+ Viral{" "}
             <span className="text-[#8c0000] font-black">Cooking</span>
@@ -368,9 +368,9 @@ export function CookingLandingPage() {
         {/* CTA Button */}
         <a
           href={buyUrl}
-          className="inline-block bg-[#8c0000] text-white px-12 py-4 rounded-xl font-black text-lg hover:bg-[#a30000] transition shadow-2xl mb-6"
+          className="inline-block bg-[#8c0000] text-white px-6 sm:px-12 py-3 sm:py-4 rounded-xl font-black text-base sm:text-lg hover:bg-[#a30000] transition shadow-2xl mb-6"
         >
-          Enroll Now — ₹89 →
+          Enroll now — ₹89 →
         </a>
 
         <p className="text-sm text-gray-500">
@@ -380,7 +380,7 @@ export function CookingLandingPage() {
 
       {/* Instant Download / Key Features - adapted from live site with custom icons */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-3xl font-light text-black mb-6 text-center font-garamond italic">
+        <h2 className="text-2xl sm:text-3xl font-light text-black mb-6 text-center font-garamond italic">
           Now available for{" "}
           <span className="text-[#8c0000] font-black">Instant</span>{" "}
           <span className="text-[#8c0000] font-black">Download</span>!
@@ -920,7 +920,7 @@ export function CookingLandingPage() {
           </p>
           <a
             href={buyUrl}
-            className="inline-block bg-white text-[#8c0000] px-12 py-5 rounded-xl font-black text-lg hover:bg-gray-100 transition shadow-2xl"
+            className="inline-block bg-white text-[#8c0000] px-6 sm:px-12 py-3 sm:py-5 rounded-xl font-black text-base sm:text-lg hover:bg-gray-100 transition shadow-2xl"
           >
             Download now — ₹89
           </a>
@@ -928,7 +928,7 @@ export function CookingLandingPage() {
       </section>
 
       {/* Persistent Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#8c0000] text-white py-3 px-4 z-50 shadow-lg">
+      <div className="fixed bottom-0 left-0 right-0 bg-[#8c0000] text-white py-3 px-4 z-50 shadow-lg sm:flex hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="text-lg font-bold font-poppins">
